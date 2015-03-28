@@ -31,7 +31,7 @@ Cylon.robot({
 
     every((1).seconds(), function() {
       if (angle >= 0 && angle <= 140) {
-				angle += increment;      	
+        angle += increment;
       } else {
       	angle = 0; // start over
       };
