@@ -12,14 +12,14 @@ Cylon.robot({
     led2: { driver: "led", pin: "P9_13" },
     servo: {
       driver: "servo",
-      pin: "P9_14",
+      pin: "P9_21",
       freq: 50,
       // pulseWidth in MicroSeconds as per servo spec sheet
       // e.g. http://www.servodatabase.com/servo/towerpro/sg90
       pulseWidth: { min: 500, max: 2400 },
       limits: { bottom: 20, top: 160 }
     },    
-    button: { driver: "button", pin: "P9_11" },
+    button: { driver: "button", pin: "P9_14" },
     dial: { driver: "analogSensor", pin: "P9_33" },
   },
 
@@ -46,6 +46,6 @@ Cylon.robot({
       };
       my.servo.angle(angle);
       console.log("Current Angle: " + my.servo.currentAngle());
-    });    
+    });
   }
 }).start();
