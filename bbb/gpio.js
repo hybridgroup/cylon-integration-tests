@@ -18,12 +18,14 @@ Cylon.robot({
       pulseWidth: { min: 500, max: 2400 },
       limits: { bottom: 20, top: 160 }
     },    
-    dial: { driver: "analogSensor", pin: "P9_33" },
+    dial: { driver: "analog-sensor", pin: "P9_33" },
+    motor: { driver: 'motor', pin: 'P9_42' }
   },
 
   work: function(my) {
     var angle = 0,
-        increment = 20;
+        increment = 20,
+        speed = 100;
 
     every((1).second(), my.led1.toggle);
     every((2).seconds(), my.led2.toggle);
@@ -44,6 +46,15 @@ Cylon.robot({
         .fromScale(0, 1799)
         .toScale(0, 255) | 0;
       console.log("reading => ", reading);
+    });
+    every((2).seconds(), function() {
+      if (speed == 0) {
+        speed = 100;
+      } else {
+        speed = 0; // start over
+      };
+      my.motor.speed(speed);
+      console.log("Current Speed: " + my.motor.currentSpeed());
     });
   }
 }).start();
