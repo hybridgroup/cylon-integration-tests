@@ -8,9 +8,9 @@ Cylon.robot({
   },
 
   devices: {
-    led1: { driver: "led", pin: "7" },
-    led2: { driver: "led", pin: "11" },
-    button: { driver: "button", pin: "12" },
+    led1: { driver: "led", pin: 7 },
+    led2: { driver: "led", pin: 11 },
+    button: { driver: "button", pin: 12 },
   },
 
   work: function(my) {

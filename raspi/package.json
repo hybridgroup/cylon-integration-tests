@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
 	"dependencies": {
-  	"cylon-raspi": "*"
+  	"cylon-raspi": "git://github.com/hybridgroup/cylon-raspi#i2x-fixes"
 	}
 }
