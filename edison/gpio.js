@@ -13,12 +13,12 @@ Cylon.robot({
     button: { driver: "button", pin: 4 },
     servo: {
       driver: "servo",
-      pin: 9,
+      pin: 6,
       freq: 50,
       pulseWidth: { min: 500, max: 2400 },
       limits: { bottom: 20, top: 160 }
     },    
-    motor: { driver: 'motor', pin: 10 }
+    motor: { driver: 'motor', pin: 9 }
   },
 
   work: function(my) {
