@@ -8,17 +8,17 @@ Cylon.robot({
   },
 
   devices: {
-    led1: { driver: "led", pin: 7 },
-    led2: { driver: "led", pin: 11 },
-    button: { driver: "button", pin: 12 },
+    led1: { driver: "led", pin: 2 },
+    led2: { driver: "led", pin: 3 },
+    button: { driver: "button", pin: 4 },
     servo: {
       driver: "servo",
-      pin: 13,
+      pin: 9,
       freq: 50,
       pulseWidth: { min: 500, max: 2400 },
       limits: { bottom: 20, top: 160 }
     },    
-    motor: { driver: 'motor', pin: 15 }
+    motor: { driver: 'motor', pin: 10 }
   },
 
   work: function(my) {
