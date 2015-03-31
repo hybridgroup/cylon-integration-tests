@@ -18,6 +18,7 @@ Cylon.robot({
       pulseWidth: { min: 500, max: 2400 },
       limits: { bottom: 20, top: 160 }
     },    
+    dial: { driver: "analog-sensor", pin: 0 },
     motor: { driver: 'motor', pin: 9 }
   },
 
@@ -38,6 +39,13 @@ Cylon.robot({
       };
       my.servo.angle(angle);
       console.log("Current Angle: " + my.servo.currentAngle());
+    });
+    every((1).seconds(), function() {
+      var reading = my.dial
+        .analogRead()
+        .fromScale(0, 1799)
+        .toScale(0, 255) | 0;
+      console.log("reading => ", reading);
     });
     every((2).seconds(), function() {
       if (speed == 0) {
