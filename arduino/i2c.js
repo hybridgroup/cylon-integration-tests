@@ -4,7 +4,7 @@ var Cylon = require("cylon");
 
 Cylon.robot({
   connections: {
-    arduino: { adaptor: "firmata", port: "/dev/ttyACM1" }
+    arduino: { adaptor: "firmata", port: "/dev/ttyACM0" }
   },
 
   devices: {
@@ -30,7 +30,7 @@ Cylon.robot({
       });
     });
 
-    every(500, function() {
+    every(1000, function() {
       my.mpu6050.getMotionAndTemp(function(err, data) {
         console.log(err, data);
       });
